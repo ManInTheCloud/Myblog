@@ -17,11 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
 from DjangoUeditor import urls as djud_urls
+from blog import urls as blog_urls
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^ueditor/',include(djud_urls)),
+    url(r'^blog/',include(blog_urls)),
 ]
 
 if settings.DEBUG:
