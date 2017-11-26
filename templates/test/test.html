@@ -3,9 +3,13 @@
         <title>For test purpose</title>
     </head>
     <body>
-        <form action="/set_cookie/" method='get'>
-        Favorite color:<input type="test" name="fav_color">
+        <form action="/experiment/set_color" method='get'>
+        Set favorite color:<input type="test" name="fav_color">
         <input type="submit" value="Submit">
+        </form>
+        <form action="/experiment/show_color" method='get'>
+        Show favorite color:
+        <input type="submit" value="Show">
         </form>
     </body>
 </html>

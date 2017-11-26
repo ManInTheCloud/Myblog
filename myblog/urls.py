@@ -19,6 +19,7 @@ from django.conf.urls import include
 from DjangoUeditor import urls as djud_urls
 from blog import urls as blog_urls
 from experiment import urls as experiment_urls
+from user import urls as user_urls
 from django.conf import settings
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^ueditor/',include(djud_urls)),
     url(r'^blog/',include(blog_urls)),
     url(r'^experiment/',include(experiment_urls)),
+    url(r'^accounts/',include(user_urls)),
 ]
 
 if settings.DEBUG:
