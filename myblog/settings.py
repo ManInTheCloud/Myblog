@@ -118,6 +118,7 @@ USE_TZ = True
 
 SESSION_EXPIRE_AT_BROWSESR_CLOSE=False
 DEFAULT_FROM_EMAIL='1256182832@qq.com'
+LOGIN_URL='/accounts/login'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

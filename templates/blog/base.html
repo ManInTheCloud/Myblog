@@ -4,7 +4,7 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width,initial-scale=1.0'>
         <meta name='description' content='A layout example that shows off a blog page with a list of posts.'>
-        <title>ManInTheCloud's blog</title>
+        {% block title %}<title>ManInTheCloud's blog</title>{% endblock %}
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
         <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css">
@@ -21,7 +21,10 @@
                                 <a class="button-success pure-button" href="/">Main page</a>
                             </li>
                             <li class="nav-item">
-                                <a class="button-success pure-button" href="/accounts/login">Registration</a>
+                                <a class="button-success pure-button" href="/accounts/login/">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="button-success pure-button" href="/accounts/logout">Logout</a>
                             </li>
                             <li class="nav-tiem">
                                 <a class="button-success pure-button" href="/">Documents</a>
@@ -47,6 +50,13 @@
                 <div>
                     {% block content %}
                     {% endblock %}
+                    {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                     <div class="footer">
                         <div class="pure-menu pure-menu-horizontal pure-menu-open">
                             <ul>

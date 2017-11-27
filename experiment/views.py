@@ -41,3 +41,9 @@ def show_color(request):
 	else:
 		return HttpResponse("cookie:you don't have a favorite color.")
 	'''
+
+def use_message(request):
+	request.user.message_set.create(
+		message='You got a new message'
+	)
+	return render_to_response('test/test.html',context_instance=RequestContext(request))
